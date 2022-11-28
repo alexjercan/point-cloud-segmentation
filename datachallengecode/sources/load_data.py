@@ -70,7 +70,7 @@ def load_yfile(path):
     y = []
     with open(path, "r") as csvfile:
         next(csvfile)  # skip header
-        y = [int(row.split(",")[1]) for row in csvfile]
+        y = [[int(row.split(",")[0]), int(row.split(",")[1])] for row in csvfile]
     return np.array(y)
 
 
